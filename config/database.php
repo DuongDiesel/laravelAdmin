@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL = parse_url(getenv("DATABASE_URL"));
+//$DATABASE_URL = parse_url(getenv("DATABASE_URL"));
 
 return [
 
@@ -69,17 +69,32 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', $DATABASE_URL["host"]),
-            'port' => env('DB_PORT', $DATABASE_URL["port"]),
-            'database' => env('DB_DATABASE', ltrim($DATABASE_URL["path"], "/")),
-            'username' => env('DB_USERNAME', $DATABASE_URL["user"]),
-            'password' => env('DB_PASSWORD', $DATABASE_URL["pass"]),
+            'host' => env('DB_HOST'),
+            'port' => env('DB_PORT'),
+            'database' => env('DB_DATABASE'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
+
+        // 'pgsql' => [
+        //     'driver' => 'pgsql',
+        //     'url' => env('DATABASE_URL'),
+        //     'host' => env('DB_HOST', $DATABASE_URL["host"]),
+        //     'port' => env('DB_PORT', $DATABASE_URL["port"]),
+        //     'database' => env('DB_DATABASE', ltrim($DATABASE_URL["path"], "/")),
+        //     'username' => env('DB_USERNAME', $DATABASE_URL["user"]),
+        //     'password' => env('DB_PASSWORD', $DATABASE_URL["pass"]),
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     'schema' => 'public',
+        //     'sslmode' => 'prefer',
+        // ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
