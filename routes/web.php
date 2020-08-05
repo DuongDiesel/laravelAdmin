@@ -19,11 +19,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/dashboardtest', 'Admin\DashboardController@getSafeCheck');
+
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', 'Admin\DashboardController@getSafeCheck');
-
+    Route::get('/dashboard1');
+    Route::get('/dashboard1');
     Route::get('/role-register','Admin\DashboardController@registered');
 });
 
