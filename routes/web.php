@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
-    Route::get('/dashboardsafe', 'Admin\DashboardController@getSafeCheck');
+    Route::get('/dashboard', 'Admin\DashboardController@getSafeCheck');
 
     Route::get('/role-register','Admin\DashboardController@registered');
 });
