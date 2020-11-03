@@ -32,7 +32,7 @@ $pie  =	 Charts::create('pie', 'highcharts')
             ->dimensions(1000,500)
             ->responsive(false);
                     
-     return view('admin.chart')->with('gender', json_encode($array))->with(compact('pie'));
+     return view('admin.chart')->with('gender', json_encode($array))->with('pie',$pie);
     }
 
 }

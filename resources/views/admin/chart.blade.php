@@ -49,5 +49,6 @@
 
   <hr>
         {!!$pie->html() !!}
+        {!! $pie->script() !!}
  </body>
 </html>
