@@ -21,6 +21,7 @@ class LaravelGoogleGraph extends Controller
      {
       $array[++$key] = [$value->gender, $value->number];
      }
+     print_r($array);
      return view('admin.chart')->with('gender', json_encode($array));
     }
 
