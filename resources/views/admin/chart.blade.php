@@ -7,9 +7,7 @@
       <div >
         <div >Chart Demo</div>
 
-        <div >
-          {!! $chart->html() !!}
-        </div>
+        
 
         <hr>
         {!!$pie->html() !!}
@@ -18,7 +16,7 @@
   </div>
 </div>
 {!! Charts::scripts() !!}
-{!! $chart->script() !!}
+
 
 {!! $pie->script() !!}
 
