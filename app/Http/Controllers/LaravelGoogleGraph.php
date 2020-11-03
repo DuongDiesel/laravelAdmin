@@ -26,9 +26,9 @@ class LaravelGoogleGraph extends Controller
      print_r($array);
 
 $pie  =	 Charts::create('pie', 'highcharts')
-            ->title('My nice chart')
-            ->labels(['First', 'Second', 'Third'])
-            ->values([5,10,20])
+            ->title('Rep or not')
+            ->labels(['Replied', 'Not repply'])
+            ->values([2,1])
             ->dimensions(1000,500)
             ->responsive(false);
                     
