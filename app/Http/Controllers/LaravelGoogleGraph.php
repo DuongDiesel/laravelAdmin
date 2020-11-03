@@ -23,7 +23,15 @@ class LaravelGoogleGraph extends Controller
      }
      print_r($data);
      print_r($array);
-     return view('admin.chart')->with('gender', json_encode($array));
+
+$pie  =	 Charts::create('pie', 'highcharts')
+            ->title('My nice chart')
+            ->labels(['First', 'Second', 'Third'])
+            ->values([5,10,20])
+            ->dimensions(1000,500)
+            ->responsive(false);
+                    
+     return view('admin.chart')->with('gender', json_encode($array))->with(compact('pie'));
     }
 
 }
@@ -34,3 +42,10 @@ class LaravelGoogleGraph extends Controller
 //         [1] => Array ( [0] => female [1] => 6 ) 
 //         [2] => Array ( [0] => male [1] => 4 ) 
 //     )
+
+
+// Object ( 
+//     [items:protected] => Array ( 
+//         [0] => stdClass Object ( [gender] => female [number] => 6 ) 
+//         [1] => stdClass Object ( [gender] => male [number] => 4 ) ) 
+//     ) 

@@ -46,5 +46,8 @@
    </div>
    
   </div>
+
+  <hr>
+        {!!$pie->html() !!}
  </body>
 </html>
