@@ -22,8 +22,8 @@ class LaravelGoogleGraph extends Controller
      {
       $array[++$key] = [$value->gender, $value->number];
      }
-     print_r($data);
-     print_r($array);
+    //  print_r($data);
+    //  print_r($array);
 
 $pie  =	 Charts::create('pie', 'highcharts')
             ->title('Rep or not')
