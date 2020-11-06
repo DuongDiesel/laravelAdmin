@@ -45,7 +45,7 @@ WHERE
 
 public.safe_check .line_id IS NULL');
 
-print_r($a[0]->count);
+print_r($a);
 $a = $a[0]->count;
 print($a);
 
