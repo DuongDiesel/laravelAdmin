@@ -44,7 +44,10 @@ public.users_line.line_userid = public.safe_check .line_id
 WHERE 
 
 public.safe_check .line_id IS NULL');
+
 print_r($a[0]->count);
+$a = $a[0]->count;
+print($a);
 
 $pie  =	 Charts::create('pie', 'highcharts')
             ->title('Rep or not')
