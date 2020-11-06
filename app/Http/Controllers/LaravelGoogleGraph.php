@@ -25,38 +25,38 @@ class LaravelGoogleGraph extends Controller
     //  print_r($data);
     //  print_r($array);
 
-$a = DB::select('SELECT DISTINCT
+    $a = DB::select('SELECT DISTINCT
 
-count(*) 
+    count(*) 
 
-FROM 
+    FROM 
 
-public.users_line  
+    public.users_line  
 
-LEFT JOIN 
+    LEFT JOIN 
 
-public.safe_check
+    public.safe_check
 
-ON 
+    ON 
 
-public.users_line.line_userid = public.safe_check .line_id  
+    public.users_line.line_userid = public.safe_check .line_id  
 
-WHERE 
+    WHERE 
 
-public.safe_check .line_id IS NULL');
-print_f($a);
-print_r($a[0]->count);
-$b= 3-$a; //3 mean all user on userline table
+    public.safe_check .line_id IS NULL');
+    print_f($a);
+    print_r($a[0]->count);
+    $b= 3-$a; //3 mean all user on userline table
 
-$pie  =	 Charts::create('pie', 'highcharts')
-            ->title('Rep or not')
-            ->labels(['Replied', 'Not repply'])
-            ->values([2,$a])
-            ->dimensions(1000,500)
-            ->responsive(false);
-                    
-     return view('admin.chart')->with('gender', json_encode($array))->with('pie',$pie);
-    }
+    $pie  =	 Charts::create('pie', 'highcharts')
+                ->title('Rep or not')
+                ->labels(['Replied', 'Not repply'])
+                ->values([2,$a])
+                ->dimensions(1000,500)
+                ->responsive(false);
+                        
+        return view('admin.chart')->with('gender', json_encode($array))->with('pie',$pie);
+        }
 
 }
 // Array ( 
