@@ -46,6 +46,7 @@ WHERE
 public.safe_check .line_id IS NULL');
 print_f($a);
 print_r($a[0]->count);
+$b= 3-$a; //3 mean all user on userline table
 
 $pie  =	 Charts::create('pie', 'highcharts')
             ->title('Rep or not')
