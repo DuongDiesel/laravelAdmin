@@ -25,6 +25,27 @@ class LaravelGoogleGraph extends Controller
     //  print_r($data);
     //  print_r($array);
 
+$a = DB::select('SELECT DISTINCT
+
+count(*) 
+
+FROM 
+
+public.users_line  
+
+LEFT JOIN 
+
+public.safe_check
+
+ON 
+
+public.users_line.line_userid = public.safe_check .line_id  
+
+WHERE 
+
+public.safe_check .line_id IS NULL');
+print_r($a);
+
 $pie  =	 Charts::create('pie', 'highcharts')
             ->title('Rep or not')
             ->labels(['Replied', 'Not repply'])
