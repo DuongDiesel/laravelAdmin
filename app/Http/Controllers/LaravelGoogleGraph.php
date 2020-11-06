@@ -44,12 +44,13 @@ public.users_line.line_userid = public.safe_check .line_id
 WHERE 
 
 public.safe_check .line_id IS NULL');
+print_f($a);
 print_r($a[0]->count);
 
 $pie  =	 Charts::create('pie', 'highcharts')
             ->title('Rep or not')
             ->labels(['Replied', 'Not repply'])
-            ->values([2,1])
+            ->values([2,$a])
             ->dimensions(1000,500)
             ->responsive(false);
                     
