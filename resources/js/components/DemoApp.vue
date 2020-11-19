@@ -22,7 +22,7 @@ export default {
       //let title = prompt('Please enter a new title for your event')
       let calendarApi = selectInfo.view.calendar
       calendarApi.unselect() // clear date selection
-      alert(selectInfo.dateStr);
+      alert(selectInfo);
     },
   }
 }

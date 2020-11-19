@@ -17171,7 +17171,7 @@ __webpack_require__.r(__webpack_exports__);
       var calendarApi = selectInfo.view.calendar;
       calendarApi.unselect(); // clear date selection
 
-      alert(selectInfo.dateStr);
+      alert(selectInfo);
     }
   }
 });
