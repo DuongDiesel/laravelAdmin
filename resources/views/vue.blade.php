@@ -65,7 +65,7 @@
     </head>
     <body>
         <div id="app">
-                <demoapp> </demoapp>
+                <demoapp> </demoapp> 
         </div>
         
         <script type="text/javascript" src="js/app.js"></script>
