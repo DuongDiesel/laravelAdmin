@@ -64,20 +64,12 @@
         </style>
     </head>
     <body>
-
         
         <div id="app">
             
-            <example-component/>
-            
+            <example-component><example-component/>
+                <welcome> <welcome/>
         </div>
-       
-        <div id="app">
-            
-            <welcome/>
-            
-        </div>
-        
         
         <script type="text/javascript" src="js/app.js"></script>
     </body>
