@@ -67,7 +67,7 @@
 
         <div class="flex-center position-ref full-height">
             <div id="app">
-                <welcome/>
+                
                 <example-component/>
             </div>
             <script type="text/javascript" src="js/app.js"></script>
