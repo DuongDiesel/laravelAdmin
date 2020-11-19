@@ -67,12 +67,10 @@
 
         
         <div id="app">
-            <welcome/>
-            <example-component/>
-        </div>
-        <div id="app">
             
             <example-component/>
+        </div>
+       
         </div>
         <script type="text/javascript" src="js/app.js"></script>
         
