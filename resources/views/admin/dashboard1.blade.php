@@ -81,7 +81,9 @@
         <div class="card-header">
           <h4 class="card-title"> calendar</h4>
         </div>
-        <demoapp> </demoapp> 
+        <div id="app">
+          <demoapp> </demoapp> 
+        </div>
       </div>
     </div>
     <!-- start Table colomn 2 -->
