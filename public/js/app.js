@@ -17161,7 +17161,7 @@ __webpack_require__.r(__webpack_exports__);
         plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__["default"], _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_2__["default"]],
         initialView: 'dayGridMonth',
         selectable: true,
-        select: this.handleDateSelect
+        dateClick: this.handleDateSelect
       }
     };
   },
@@ -17171,7 +17171,7 @@ __webpack_require__.r(__webpack_exports__);
       var calendarApi = selectInfo.view.calendar;
       calendarApi.unselect(); // clear date selection
 
-      alert(selectInfo);
+      alert('date click! ' + selectInfo.dateStr);
     }
   }
 });

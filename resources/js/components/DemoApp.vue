@@ -13,7 +13,7 @@ export default {
         plugins: [ dayGridPlugin, interactionPlugin ],
         initialView: 'dayGridMonth',
         selectable:true,
-        select: this.handleDateSelect,
+        dateClick: this.handleDateSelect,
       }
     }
   },
@@ -22,7 +22,7 @@ export default {
       //let title = prompt('Please enter a new title for your event')
       let calendarApi = selectInfo.view.calendar
       calendarApi.unselect() // clear date selection
-      alert(selectInfo);
+      alert('date click! ' + selectInfo.dateStr);
     },
   }
 }
