@@ -68,7 +68,7 @@
         <div id="app">
             
             <example-component></example-component>
-                <welcome> </welcome>
+                <demoapp> </demoapp>
         </div>
         
         <script type="text/javascript" src="js/app.js"></script>

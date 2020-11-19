@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@fullcalendar/daygrid": "^5.4.0",
+        "@fullcalendar/interaction": "^5.4.0",
         "@fullcalendar/vue": "^5.4.0"
     }
 }
