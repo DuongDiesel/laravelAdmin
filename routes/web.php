@@ -28,6 +28,10 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/role-register','Admin\DashboardController@registered');
 
     Route::get('/chart', 'LaravelGoogleGraph@index');
+    
+    Route::get('/vue', function () {
+        return view('vue');
+    });
 
 });
 
