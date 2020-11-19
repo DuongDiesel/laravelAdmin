@@ -14,7 +14,11 @@
 </template>
 
 <script>
-        export default {}
+       export default {
+        mounted() {
+            console.log('welcome Component mounted.')
+        }
+       }
 </script>
 
 <style scoped>
