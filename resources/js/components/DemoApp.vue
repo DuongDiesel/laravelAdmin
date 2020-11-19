@@ -11,9 +11,19 @@ export default {
     return {
       calendarOptions: {
         plugins: [ dayGridPlugin, interactionPlugin ],
-        initialView: 'dayGridMonth'
+        initialView: 'dayGridMonth',
+        selectable:true,
+        select: this.handleDateSelect,
       }
     }
+  },
+  methods:{
+    handleDateSelect(selectInfo) {
+      //let title = prompt('Please enter a new title for your event')
+      let calendarApi = selectInfo.view.calendar
+      calendarApi.unselect() // clear date selection
+      alert(selectInfo.dateStr);
+    },
   }
 }
 </script>
