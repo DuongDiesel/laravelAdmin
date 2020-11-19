@@ -65,13 +65,13 @@
     </head>
     <body>
 
-        <div class="flex-center position-ref full-height">
-            <div id="app">
-                <welcome/>
-                <example-component/>
-            </div>
-            <script type="text/javascript" src="js/app.js"></script>
+        
+        <div id="app">
+            <welcome/>
+            <example-component/>
         </div>
+        <script type="text/javascript" src="js/app.js"></script>
+        
         
     </body>
 </html>
