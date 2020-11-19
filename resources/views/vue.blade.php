@@ -69,16 +69,16 @@
         <div id="app">
             
             <example-component/>
-            <script type="text/javascript" src="js/app.js"></script>
+            
         </div>
        
         <div id="app">
             
             <welcome/>
-            <script type="text/javascript" src="js/app.js"></script>
+            
         </div>
         
         
-        
+        <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
