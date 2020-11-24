@@ -22,7 +22,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //Vue.component('welcome', require('./components/Welcome.vue').default);
 Vue.component('demoapp', require('./components/DemoApp.vue').default);
-Vue.component('dateclicked', require('./components/DateClick.vue').default);
+Vue.component('DateClick', require('./components/DateClick.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

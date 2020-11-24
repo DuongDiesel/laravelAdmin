@@ -9,8 +9,9 @@
 @endsection
 
 @section('content')
+
 <div id="app">
-    <dateclicked></dateclicked> 
+    <DateClick></DateClick> 
 </div>
 
 @endsection
