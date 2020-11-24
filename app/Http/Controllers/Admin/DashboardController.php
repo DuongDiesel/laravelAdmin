@@ -52,6 +52,8 @@ class DashboardController extends Controller
    {    
         print_r($time);
         info($time);
+        $time_1=$time;
+        $time_2=$time+86399998;
         $times=1604298448104;
         $A_respond = DB::select('SELECT DISTINCT
  
@@ -98,7 +100,11 @@ class DashboardController extends Controller
          
          and
          
-         time_update >='$times'
+         time_update >='$time_1'
+
+         and
+
+         time_update <='$time_2'
          
          GROUP BY
          
@@ -119,7 +125,11 @@ class DashboardController extends Controller
          
          and
          
-         time_update >='$times'
+         time_update >='$time_1'
+
+         and
+
+         time_update <='$time_2'
          
          GROUP BY 
          
