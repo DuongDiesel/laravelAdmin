@@ -10,7 +10,7 @@
 
 @section('content')
 <div id="app">
-    <demoapp> </demoapp> 
+    <dateclick> </dateclick> 
 </div>
 
 @endsection
