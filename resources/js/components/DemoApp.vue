@@ -13,7 +13,7 @@ export default {
         plugins: [ dayGridPlugin, interactionPlugin ],
         initialView: 'dayGridMonth',
         selectable:true,
-        dateClick: this.handleDateSelect,
+        dateClick: this.gotoreport,
       }
     }
   },
@@ -24,6 +24,10 @@ export default {
       calendarApi.unselect() // clear date selection
       alert('date click! ' + selectInfo.dateStr);
     },
+    gotoreport(selectInfo){
+        url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
+        window.location.replace(url);
+    }
   }
 }
 </script>
