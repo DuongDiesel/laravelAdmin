@@ -17,6 +17,7 @@ export default {
       }
     }
   },
+  
   methods:{
     handleDateSelect(selectInfo) {
       //let title = prompt('Please enter a new title for your event')
