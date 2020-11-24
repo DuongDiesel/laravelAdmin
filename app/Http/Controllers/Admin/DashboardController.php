@@ -49,7 +49,8 @@ class DashboardController extends Controller
         return view('admin.dashboard2');
    }
    public function dashboard2report($time = 1)
-   {
+   {    
+        print_r($time);
         $times=1604298448104;
         $A_respond = DB::select('SELECT DISTINCT
  
