@@ -17168,10 +17168,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     handleDateSelect: function handleDateSelect(selectInfo) {
       var calendarApi = selectInfo.view.calendar;
+      var url = "/https://adminlaravelgithub.herokuapp.com/dashboard2report/";
       calendarApi.unselect(); // clear date selection
+      //var url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
 
-      url = "/https://adminlaravelgithub.herokuapp.com/dashboard2report/" + String(selectInfo.dateStr);
-      window.location.replace(url);
+      window.open(url);
     },
     gotoreport: function gotoreport(selectInfo) {
       url = "/https://adminlaravelgithub.herokuapp.com/dashboard2report/" + String(selectInfo.dateStr);

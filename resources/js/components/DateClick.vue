@@ -20,8 +20,9 @@ export default {
   methods:{
     handleDateSelect(selectInfo) {
       let calendarApi = selectInfo.view.calendar
+      var url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/";
       calendarApi.unselect() // clear date selection
-      var url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
+      //var url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
        window.open(url);
     },
     gotoreport(selectInfo){
