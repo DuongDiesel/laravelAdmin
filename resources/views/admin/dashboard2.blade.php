@@ -11,7 +11,7 @@
 @section('content')
 
 <div id="app">
-    <welcome></welcome> 
+    <democlick></democlick> 
 </div>
 
 @endsection
