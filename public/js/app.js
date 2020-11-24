@@ -17174,7 +17174,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log(myDate);
       myDate = myDate.split("-");
       var newDate = new Date(myDate[0], myDate[1] - 1, myDate[2]);
-      console.log(newDate); //var timestapm = 
+      console.log(newDate.getTime()); //var timestapm = 
 
       calendarApi.unselect(); // clear date selection
       //var url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
