@@ -21,7 +21,7 @@ export default {
     handleDateSelect(selectInfo) {
       let calendarApi = selectInfo.view.calendar
       calendarApi.unselect() // clear date selection
-      url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
+      var url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
        window.open(url);
     },
     gotoreport(selectInfo){
