@@ -47,7 +47,7 @@ class DashboardController extends Controller
    {
         return view('admin.dashboard2');
    }
-   public function dashboard2report($time)
+   public function dashboard2report($time = 1)
    {
         $tempcheck = DB::select('SELECT public.users_line.user_id, public.users_line.user_name, public.temp_check.line_id, public.temp_check.temp, public.temp_check.temp_time FROM public.temp_check,public.users_line WHERE public.users_line.line_userid = public.temp_check.line_id ');
         return view('report.dashboard2report')->with('tempcheck',$tempcheck);      
