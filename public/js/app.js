@@ -17161,7 +17161,7 @@ __webpack_require__.r(__webpack_exports__);
         plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__["default"], _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_2__["default"]],
         initialView: 'dayGridMonth',
         selectable: true,
-        dateClick: this.gotoreport
+        dateClick: this.handleDateSelect
       }
     };
   },
@@ -17170,8 +17170,10 @@ __webpack_require__.r(__webpack_exports__);
       //let title = prompt('Please enter a new title for your event')
       var calendarApi = selectInfo.view.calendar;
       calendarApi.unselect(); // clear date selection
+      //alert('date click! ' + selectInfo.dateStr);
 
-      alert('date click! ' + selectInfo.dateStr);
+      url = "/https://adminlaravelgithub.herokuapp.com/dashboard2report/" + String(selectInfo.dateStr);
+      window.location.replace(url);
     },
     gotoreport: function gotoreport(selectInfo) {
       url = "/https://adminlaravelgithub.herokuapp.com/dashboard2report/" + String(selectInfo.dateStr);
