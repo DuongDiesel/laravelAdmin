@@ -168,8 +168,10 @@ class DashboardController extends Controller
          public.safe_check.time_update <='$time_2'
          
          and 
-         
+
          public.safe_check.is_safe != 'Safe'");
+
+         dd($safecheck);
          
         // return view('admin.chart')->with('pie_respond',$pie_respond);
          return view('report.dashboard2report',compact('pie_respond','pie_Safe','safecheck'));
