@@ -165,7 +165,11 @@ class DashboardController extends Controller
 
          and
 
-         public.safe_check.time_update <='$time_2'");
+         public.safe_check.time_update <='$time_2'
+         
+         and 
+         
+         public.safe_check.is_safe != 'Safe'");
          
         // return view('admin.chart')->with('pie_respond',$pie_respond);
          return view('report.dashboard2report',compact('pie_respond','pie_Safe','safecheck'));
