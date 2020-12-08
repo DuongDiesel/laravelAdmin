@@ -176,7 +176,7 @@ class DashboardController extends Controller
          $notrep = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.safe_location, public.safe_check.safe_mess, public.safe_check.time_update 
          FROM public.safe_check,public.users_line 
 
-         WHERE public.users_line.line_id NOT IN(SELECT public.safe_check.line_id FROM public.safe_check )
+         WHERE public.users_line.line_userid NOT IN(SELECT public.safe_check.line_id FROM public.safe_check )
 
          and
 
