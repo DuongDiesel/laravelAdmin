@@ -173,25 +173,16 @@ class DashboardController extends Controller
 
          //dd($safecheck);
 
-         $notrep = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, 
+         
+         $notrep = DB::select("SELECT public.users_line.user_id, public.users_line.line_userid
 
-         FROM public.users_line ,public.users_line 
-
-         WHERE public.users_line.line_userid NOT IN(SELECT public.safe_check.line_id FROM public.safe_check )
-
-         AND
-
-         public.users_line.line_userid = public.safe_check.line_id 
-
-         AND
-
-         public.safe_check.time_update >='$time_1'
-
-         AND
-
-         public.safe_check.time_update <='$time_2'");
+         FROM  public.users_line
+         
+         WHERE public.users_line.line_userid NOT IN(SELECT public.safe_check.line_id FROM public.safe_check WHERE public.safe_check.time_update >= '$time_1'AND public.safe_check.time_update <= '$time_2')");
 
          dd($notrep);
+
+
          
         // return view('admin.chart')->with('pie_respond',$pie_respond);
          return view('report.dashboard2report',compact('pie_respond','pie_Safe','safecheck'));
