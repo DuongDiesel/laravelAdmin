@@ -173,16 +173,21 @@ class DashboardController extends Controller
 
          //dd($safecheck);
 
-         $notrep = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.safe_location, public.safe_check.safe_mess, public.safe_check.time_update 
-         FROM public.safe_check,public.users_line 
+         $notrep = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, 
+
+         FROM public.users_line ,public.users_line 
 
          WHERE public.users_line.line_userid NOT IN(SELECT public.safe_check.line_id FROM public.safe_check )
 
-         and
+         AND
+
+         public.users_line.line_userid = public.safe_check.line_id 
+
+         AND
 
          public.safe_check.time_update >='$time_1'
 
-         and
+         AND
 
          public.safe_check.time_update <='$time_2'");
 
