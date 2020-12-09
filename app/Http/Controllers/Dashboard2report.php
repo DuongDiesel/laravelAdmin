@@ -52,7 +52,7 @@ class Dashboard2report extends Controller
         
         WHERE tav.is_safe != 'Safe'");
 
-        dd($safecheck3);
+        //dd($safecheck3);
 
         return view('report.dashboard2test',compact('safecheck','safecheck2','safecheck3'));
 
