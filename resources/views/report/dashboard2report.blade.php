@@ -10,6 +10,43 @@
 
 @section('content')
 
+
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">safecheck</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>user_id</th>
+              <th>user_name</th>
+              <th>line_id</th>
+              <th>is_safe</th>
+              <th>safe_location</th> 
+              <th>safe_mess</th> 
+              <th>time_update</th>                    
+            </thead>
+            <tbody>                
+              @foreach ($safecheck as $rowsafecheck)
+                <tr>
+                <td>{{ $rowsafecheck->user_id }}</td>
+                <td>{{ $rowsafecheck->user_name }}</td>
+                <td>{{ $rowsafecheck->line_id }}</td>
+                <td>{{ $rowsafecheck->is_safe }}</td>
+                <td>{{ $rowsafecheck->safe_location }}</td>
+                <td>{{ $rowsafecheck->safe_mess }}</td> 
+                <td>{{ $rowsafecheck->time_update }}</td>                    
+                </tr>
+              @endforeach                   
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">safecheck2-lated submit per user</h4>
@@ -38,8 +75,6 @@
     </div>
 
 
-
-  
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">safecheck3-lated submit per user and not safe</h4>
@@ -79,38 +114,3 @@
 
 
 
-{{-- 
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">safecheck</h4>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table">
-            <thead class=" text-primary">
-              <th>user_id</th>
-              <th>user_name</th>
-              <th>line_id</th>
-              <th>is_safe</th>
-              <th>safe_location</th> 
-              <th>safe_mess</th> 
-              <th>time_update</th>                    
-            </thead>
-            <tbody>                
-              @foreach ($safecheck as $rowsafecheck)
-                <tr>
-                <td>{{ $rowsafecheck->user_id }}</td>
-                <td>{{ $rowsafecheck->user_name }}</td>
-                <td>{{ $rowsafecheck->line_id }}</td>
-                <td>{{ $rowsafecheck->is_safe }}</td>
-                <td>{{ $rowsafecheck->safe_location }}</td>
-                <td>{{ $rowsafecheck->safe_mess }}</td> 
-                <td>{{ $rowsafecheck->time_update }}</td>                    
-                </tr>
-              @endforeach                   
-              
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div> --}}
