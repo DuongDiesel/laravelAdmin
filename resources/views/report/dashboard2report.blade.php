@@ -145,7 +145,7 @@
 @section('content')
 
   
-<div class="col-9">
+<div class="col-3">
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">safecheck</h4>
@@ -182,7 +182,7 @@
     </div>
   </div>
 
-  <div class="col-9">
+  <div class="col-3">
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">safecheck2-lated submit per user</h4>
@@ -212,10 +212,10 @@
   </div>
 
 
-  <div class="col-9">
+  <div class="col-3">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">safecheck2-lated submit per user and not safe</h4>
+        <h4 class="card-title">safecheck3-lated submit per user and not safe</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
