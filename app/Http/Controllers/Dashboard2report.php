@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use DB;
+use Charts;
+use App\Http\Controllers\Controller;
 
 class Dashboard2report extends Controller
 {
