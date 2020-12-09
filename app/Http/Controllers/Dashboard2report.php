@@ -133,10 +133,10 @@ class Dashboard2report extends Controller
  
           public.safe_check.is_safe != 'Safe'");
  
-          //dd($safecheck);
+          dd($safecheck);
  
           
-          $notrep = DB::select("SELECT public.users_line.user_id, public.users_line.line_userid
+          $notrep = DB::select("SELECT public.users_line.user_id, public.users_line.line_userid, public.users_line.time_update
  
           FROM  public.users_line
           
