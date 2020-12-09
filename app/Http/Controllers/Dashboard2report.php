@@ -56,7 +56,18 @@ class Dashboard2report extends Controller
         WHERE public.safe_check.time_update >='$time_1'
         AND public.safe_check.time_update <='$time_2'");
 
-        dd($safecheck4);
+        //dd($safecheck4);
+
+        $safecheck5 = DB::select("SELECT public.users_line.user_id
+        FROM public.users_line 
+        WHERE public.users_line.user_id NOT IN (SELECT DISTINCT public.safe_check.line_id 
+        FROM public.safe_check
+        WHERE public.safe_check.time_update >='$time_1'
+        AND public.safe_check.time_update <='$time_2')
+        
+        ");
+
+        dd($safecheck5);
 
         return view('report.dashboard2report',compact('safecheck','safecheck2','safecheck3'));
 
