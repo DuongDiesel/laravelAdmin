@@ -191,7 +191,7 @@ class Dashboard2report extends Controller
             
         ");
 
-        dd($safecheck);
+        dd($safecheck2);
 
 
     }
