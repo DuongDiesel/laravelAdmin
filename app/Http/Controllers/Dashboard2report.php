@@ -51,7 +51,7 @@ class Dashboard2report extends Controller
 
         //dd($safecheck3);
 
-        $safecheck4 = DB::select("SELECT public.safe_check.line_id 
+        $safecheck4 = DB::select("SELECT DISTINCT public.safe_check.line_id 
         FROM public.safe_check
         WHERE public.safe_check.time_update >='$time_1'
         AND public.safe_check.time_update <='$time_2'");
