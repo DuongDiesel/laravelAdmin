@@ -142,7 +142,7 @@ class Dashboard2report extends Controller
           
           WHERE public.users_line.line_userid NOT IN(SELECT public.safe_check.line_id FROM public.safe_check WHERE public.safe_check.time_update >= '$time_1'AND public.safe_check.time_update <= '$time_2')");
  
-          dd($notrep);
+          //dd($notrep);
  
  
           
