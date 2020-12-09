@@ -147,7 +147,8 @@ class Dashboard2report extends Controller
  
           
          // return view('admin.chart')->with('pie_respond',$pie_respond);
-          return view('report.dashboard2report',compact('pie_respond','pie_Safe','safecheck'));
+         // return view('report.dashboard2report',compact('pie_respond','pie_Safe','safecheck'));
+          return view('report.dashboard2test');
  
          
     }
