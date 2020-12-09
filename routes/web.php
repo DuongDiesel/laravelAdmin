@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
     Route::get('/chart', 'LaravelGoogleGraph@index');
     //report
-    Route::get('/dashboard2report/{time?}','Admin\DashboardController@dashboard2report');
+    Route::get('/dashboard2report/{time?}','Dashboard2report@dashboard2report');
 
     Route::get('/vue', function () {
         return view('vue');
