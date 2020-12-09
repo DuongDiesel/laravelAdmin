@@ -185,7 +185,7 @@
   <div class="col-9">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">safecheck2</h4>
+        <h4 class="card-title">safecheck2-lated submit per user</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -198,9 +198,9 @@
             <tbody>                
               @foreach ($safecheck2 as $rowsafecheck2)
                 <tr>
-                <td>{{ $rowsafecheck->line_id }}</td>
-                <td>{{ $rowsafecheck->is_safe }}</td>
-                <td>{{ $rowsafecheck->time_update }}</td>                    
+                <td>{{ $rowsafecheck2->line_id }}</td>
+                <td>{{ $rowsafecheck2->is_safe }}</td>
+                <td>{{ $rowsafecheck2->time_update }}</td>                    
                 </tr>
               @endforeach                   
               
@@ -210,6 +210,37 @@
       </div>
     </div>
   </div>
+
+
+  <div class="col-9">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">safecheck2-lated submit per user and not safe</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>line_id</th>
+              <th>is_safe</th>
+              <th>time_update</th>                    
+            </thead>
+            <tbody>                
+              @foreach ($safecheck3 as $rowsafecheck3)
+                <tr>
+                <td>{{ $rowsafecheck3->line_id }}</td>
+                <td>{{ $rowsafecheck3->is_safe }}</td>
+                <td>{{ $rowsafecheck3->time_update }}</td>                    
+                </tr>
+              @endforeach                   
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   
 
 @endsection

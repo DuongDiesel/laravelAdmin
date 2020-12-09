@@ -34,14 +34,25 @@ class Dashboard2report extends Controller
         WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
         AND public.safe_check.time_update >='$time_1'
         AND public.safe_check.time_update <='$time_2'
-        AND public.safe_check.is_safe != 'Safe'
+        
         ORDER BY public.safe_check.line_id, id desc;
             
         ");
 
         //dd($safecheck2);
 
-        return view('report.dashboard2test',compact('safecheck','safecheck2'));
+        $safecheck3 = DB::select("SELECT tav.line_id, tav.is_safe, tav.time_update
+        FROM(SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe,public.safe_check.time_update
+                FROM public.safe_check 
+                WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
+                AND public.safe_check.time_update >=1607439600000
+                AND public.safe_check.time_update <=1607525999998
+        
+                ORDER BY public.safe_check.line_id, id desc) AS tav
+        
+        WHERE tav.is_safe != 'Safe';");
+
+        return view('report.dashboard2test',compact('safecheck','safecheck2','safecheck3'));
 
     }
  
