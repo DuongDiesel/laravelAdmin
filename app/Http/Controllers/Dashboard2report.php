@@ -51,7 +51,7 @@ class Dashboard2report extends Controller
 
         //dd($safecheck3);
 
-        return view('report.dashboard2test',compact('safecheck','safecheck2','safecheck3'));
+        return view('report.dashboard2test',compact('safecheck2','safecheck3'));
 
     }
  
