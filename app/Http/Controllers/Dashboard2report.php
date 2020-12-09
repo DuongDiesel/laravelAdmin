@@ -16,7 +16,7 @@ class Dashboard2report extends Controller
          info($time);
          $time_1=$time;
          $time_2=$time+86399998;
-         $times=1604298448104;
+         //$times=1604298448104;
          $A_respond = DB::select('SELECT DISTINCT
   
          count(*) 
