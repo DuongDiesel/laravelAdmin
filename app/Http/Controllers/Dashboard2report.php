@@ -39,7 +39,7 @@ class Dashboard2report extends Controller
             
         ");
 
-        //dd($safecheck2);
+        dd($safecheck2);
 
         $safecheck3 = DB::select("SELECT tav.line_id, tav.is_safe, tav.time_update
         FROM(SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe,public.safe_check.time_update
