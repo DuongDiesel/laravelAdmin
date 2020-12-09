@@ -50,7 +50,9 @@ class Dashboard2report extends Controller
         
                 ORDER BY public.safe_check.line_id, id desc) AS tav
         
-        WHERE tav.is_safe != 'Safe';");
+        WHERE tav.is_safe != 'Safe'");
+
+        dd($safecheck3);
 
         return view('report.dashboard2test',compact('safecheck','safecheck2','safecheck3'));
 
