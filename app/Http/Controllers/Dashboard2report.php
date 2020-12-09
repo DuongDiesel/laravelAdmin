@@ -179,7 +179,7 @@ class Dashboard2report extends Controller
 
         public.safe_check.is_safe != 'Safe'");
 
-        dd($safecheck);
+        //dd($safecheck);
 
         $safecheck2 = DB::select("SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.time_update
         FROM public.safe_check 
