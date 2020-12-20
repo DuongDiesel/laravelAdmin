@@ -4,7 +4,7 @@
     Dashboard1-Safety check
 @endsection
 
-@section('l2')
+@section('l1')
     class="active "
 @endsection
 

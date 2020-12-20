@@ -38,12 +38,17 @@ class DashboardController extends Controller
 
              
    }
-   public function dashboard1()
+   public function dashboard()
    {
-        $tempcheck = DB::select('SELECT public.users_line.user_id, public.users_line.user_name, public.temp_check.line_id, public.temp_check.temp, public.temp_check.temp_time FROM public.temp_check,public.users_line WHERE public.users_line.line_userid = public.temp_check.line_id ');
-        return view('admin.dashboard1')->with('tempcheck',$tempcheck);      
+        return view('admin.dashboard');
         
    }
+   public function dashboard1()
+   {
+        return view('admin.dashboard1');
+   }
+
+   
    public function dashboard2()
    {
         return view('admin.dashboard2');
