@@ -4,7 +4,7 @@
     Dashboard2-tkb
 @endsection
 
-@section('l3')
+@section('l2')
     class="active "
 @endsection
 

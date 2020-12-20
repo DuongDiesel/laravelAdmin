@@ -24,11 +24,11 @@ export default {
       let calendarApi = selectInfo.view.calendar
       calendarApi.unselect() // clear date selection
       //alert('date click! ' + selectInfo.dateStr);
-      url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
+      url="/https://adminlaravelgithub.herokuapp.com/dashboardreport/"+String(selectInfo.dateStr);
       window.location.replace(url);
     },
     gotoreport(selectInfo){
-        url="/https://adminlaravelgithub.herokuapp.com/dashboard2report/"+String(selectInfo.dateStr);
+        url="/https://adminlaravelgithub.herokuapp.com/dashboardreport/"+String(selectInfo.dateStr);
         window.location.replace(url);
     }
   }
