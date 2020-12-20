@@ -32,9 +32,6 @@ Vue.component('democlick1', require('./components/DateClick1.vue').default);
 
 const app = new Vue({
     el: '#app',
-    component:{
-        democlick,
-        democlick1
-    }
+    
     
 });
