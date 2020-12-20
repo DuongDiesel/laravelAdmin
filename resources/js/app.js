@@ -33,8 +33,5 @@ Vue.component('democlick', require('./components/DateClick.vue').default);
 
 const app = new Vue({
     el: '#app',
-    components: {
-        demoapp,
-        demoapp1
-      }
+    
 });
