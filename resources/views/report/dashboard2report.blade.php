@@ -36,7 +36,7 @@
                 <td>{{ $rowsafecheck->is_safe }}</td>
                 <td>{{ $rowsafecheck->safe_location }}</td>
                 <td>{{ $rowsafecheck->safe_mess }}</td> 
-                <td>{{ $rowsafecheck->time_update }}</td>                    
+                <td>{{ $rowsafecheck->time_update }}</td>
                 </tr>
               @endforeach                   
               
