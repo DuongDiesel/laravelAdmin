@@ -24,6 +24,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('demoapp', require('./components/DemoApp.vue').default);
 Vue.component('demoapp1', require('./components/DemoApp1.vue').default);
 Vue.component('democlick', require('./components/DateClick.vue').default);
+Vue.component('democlick1', require('./components/DateClick1.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
