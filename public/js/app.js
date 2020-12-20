@@ -65878,7 +65878,11 @@ Vue.component('democlick', __webpack_require__(/*! ./components/DateClick.vue */
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  components: {
+    demoapp: demoapp,
+    demoapp1: demoapp1
+  }
 });
 
 /***/ }),
