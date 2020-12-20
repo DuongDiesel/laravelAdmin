@@ -36,7 +36,7 @@ export default {
        window.open(res);
     },
     gotoreport(selectInfo){
-        url="/https://adminlaravelgithub.herokuapp.com/dashboardreport/"+String(selectInfo.dateStr);
+        url="/https://adminlaravelgithub.herokuapp.com/dashboard1report/"+String(selectInfo.dateStr);
         window.location.replace(url);
         //alert('date click! ' + selectInfo.dateStr);
     }

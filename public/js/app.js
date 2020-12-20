@@ -15910,7 +15910,7 @@ __webpack_require__.r(__webpack_exports__);
       window.open(res);
     },
     gotoreport: function gotoreport(selectInfo) {
-      url = "/https://adminlaravelgithub.herokuapp.com/dashboard2report/" + String(selectInfo.dateStr);
+      url = "/https://adminlaravelgithub.herokuapp.com/dashboardreport/" + String(selectInfo.dateStr);
       window.location.replace(url); //alert('date click! ' + selectInfo.dateStr);
     }
   }
