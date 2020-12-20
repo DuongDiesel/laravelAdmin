@@ -22,6 +22,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 //Vue.component('welcome', require('./components/Welcome.vue').default);
 Vue.component('demoapp', require('./components/DemoApp.vue').default);
+Vue.component('demoapp1', require('./components/DemoApp1.vue').default);
 Vue.component('democlick', require('./components/DateClick.vue').default);
 
 /**
