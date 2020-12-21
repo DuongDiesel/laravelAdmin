@@ -40,12 +40,15 @@ class Dashboardreport extends Controller
         ORDER BY public.safe_check.line_id, id desc;
         ");
 
-        $safecheck2count = DB::select("SELECT count (*) FROM (SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.time_update
-        FROM public.safe_check 
-        WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
-        AND public.safe_check.time_update >='$time_1'
-        AND public.safe_check.time_update <='$time_2'
-        ORDER BY public.safe_check.line_id, id desc)");
+        $safecheck2count = DB::select("SELECT 
+        count (*) 
+        FROM (SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.time_update
+            FROM public.safe_check 
+            WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
+            AND public.safe_check.time_update >='$time_1'
+            AND public.safe_check.time_update <='$time_2'
+            ORDER BY public.safe_check.line_id, id desc) 
+            ");
 
         $abc=$safecheck2count[0]->count;
         dd($abc);
