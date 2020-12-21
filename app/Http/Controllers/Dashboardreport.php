@@ -47,8 +47,9 @@ class Dashboardreport extends Controller
             WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
             AND public.safe_check.time_update >='$time_1'
             AND public.safe_check.time_update <='$time_2'
-            ORDER BY public.safe_check.line_id, id desc) 
-            ");
+            ORDER BY public.safe_check.line_id, id desc) AS foo
+            
+        ");
 
         $abc=$safecheck2count[0]->count;
         dd($abc);
