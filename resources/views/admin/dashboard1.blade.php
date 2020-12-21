@@ -11,7 +11,7 @@
 @section('content')
 
 <div id="app">
-    <DateClick1></DateClick1> 
+    <dateclick1></dateclick1> 
 </div>
 
 @endsection

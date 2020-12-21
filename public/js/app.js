@@ -64792,8 +64792,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]); //Vue.component('welcome', require('./components/Welcome.vue').default);
 
-Vue.component('DateClick', __webpack_require__(/*! ./components/DateClick.vue */ "./resources/js/components/DateClick.vue")["default"]);
-Vue.component('DateClick1', __webpack_require__(/*! ./components/DateClick1.vue */ "./resources/js/components/DateClick1.vue")["default"]);
+Vue.component('dateclick', __webpack_require__(/*! ./components/DateClick.vue */ "./resources/js/components/DateClick.vue")["default"]);
+Vue.component('dateclick1', __webpack_require__(/*! ./components/DateClick1.vue */ "./resources/js/components/DateClick1.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
