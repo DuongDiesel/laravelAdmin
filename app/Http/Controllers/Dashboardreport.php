@@ -13,12 +13,12 @@ class Dashboardreport extends Controller
     
     public function test($time){
 
-        print_r($time);
+        //print_r($time);
         info($time);
         $time_1=$time;
         $time_2=$time+86399998;
         //print_r($time_1);
-        print_r($time_2);
+        //print_r($time_2);
 
         
 
@@ -39,7 +39,15 @@ class Dashboardreport extends Controller
         AND public.safe_check.time_update <='$time_2'
         ORDER BY public.safe_check.line_id, id desc;
         ");
-        $abc=$safecheck2[0]->count;
+
+        $safecheck2count = DB::select("SELECT count (*) FROM (SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.time_update
+        FROM public.safe_check 
+        WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
+        AND public.safe_check.time_update >='$time_1'
+        AND public.safe_check.time_update <='$time_2'
+        ORDER BY public.safe_check.line_id, id desc)");
+
+        $abc=$safecheck2count[0]->count;
         dd($abc);
         // dung cai nay de hien ra nhung ng da nhap vao ngay hom day va not safe
         $safecheck3 = DB::select("SELECT tav.line_id, tav.is_safe, tav.time_update
