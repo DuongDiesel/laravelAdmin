@@ -28,6 +28,6 @@ class Seemore extends Controller
 
         //dd($safecheck4);
 
-        return view('report.dashboardreportseemore',compact('safecheck3'));
+        return view('report.dashboardreportseemore',compact('safecheck3','safecheck4'));
     }
 }
