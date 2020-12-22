@@ -9,7 +9,7 @@ use DB;
 class Seemore extends Controller
 {
     //
-    public function index($id){
+    public function index($id=1){
 
         $id_1 = $id;
 
@@ -18,7 +18,7 @@ class Seemore extends Controller
         WHERE public.safe_check.id = '$id_1'
         ");
 
-        //dd($safecheck3);
+        dd($id);
 
         return view('report.dashboardreportseemore',compact('safecheck3'));
     }
