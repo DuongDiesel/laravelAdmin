@@ -14,7 +14,7 @@
 <div class="row">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">safecheck3-lated submit per user and not safe</h4>
+        <h4 class="card-title">Submit Info</h4>
       </div>
       <div class="card-body">
         @if($safecheck3 == null)
@@ -48,6 +48,43 @@
   </div>
   <!-- end table row 1 -->
   
+<!-- start table 2 row-->
+<div class="row">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Student Info</h4>
+      </div>
+      <div class="card-body">
+        @if($safecheck4 == null)
+          <h3>No Data Was Found </h3>
+              
+        @else  
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>Student ID</th>
+              <th>State</th>
+              <th>Message</th>   
+            </thead>
+            <tbody>                
+              @foreach ($safecheck4 as $rowsafecheck4)
+                <tr>
+
+                <td>{{ $rowsafecheck4->user_id }}</td>
+                <td>{{ $rowsafecheck4->user_name }}</td>
+                <td>{{ $rowsafecheck4->user_address }}</td>
+                                 
+                </tr>
+              @endforeach                   
+          @endif     
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end table row 2 -->
 
  
 @endsection
