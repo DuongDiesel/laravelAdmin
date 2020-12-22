@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Dashboard1-Safety check
+    Dashboard-Safety check report
 @endsection
 
 @section('l1')

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Dashboard2-tkb
+    Dashboard-SafeCheck
 @endsection
 
 @section('l1')
