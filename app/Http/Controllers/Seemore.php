@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class Seemore extends Controller
 {
     //
-    public function index($id){
+    public function index($id=1){
 
         $id_1 = $id;
 
