@@ -9,7 +9,7 @@ class Seemore extends Controller
     //
     public function index($id){
 
-        $id_1=$id;
+        $id_1 = $id;
 
         $safecheck3 = DB::select("SELECT public.safe_check.line_id, public.safe_check.is_safe
         FROM public.safe_check
@@ -18,6 +18,6 @@ class Seemore extends Controller
 
         dd($safecheck3);
 
-        return view('report.dashboardreportseemore');
+        return view('report.dashboardreportseemore',compact('safecheck3'));
     }
 }
