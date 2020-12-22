@@ -9,7 +9,7 @@ use DB;
 class Seemore extends Controller
 {
     //
-    public function index($id=1){
+    public function index($id){
 
         $id_1 = $id;
 
