@@ -53,14 +53,15 @@ class Dashboardreport extends Controller
         //----------------------------------------------------------------
 
         // dung cai nay de hien ra nhung ng da nhap vao ngay hom day va not safe
-        $safecheck3 = DB::select("SELECT tav.line_id, tav.is_safe, tav.time_update
-        FROM(SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe,public.safe_check.time_update
-            FROM public.safe_check 
-            WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
-            AND public.safe_check.time_update >='$time_1'
-            AND public.safe_check.time_update <='$time_2'
-            ORDER BY public.safe_check.line_id, id desc) AS tav
-        WHERE tav.is_safe != 'Safe'");
+        $safecheck3 = DB::select("SELECT tav.id, tav.line_id, tav.is_safe, tav.time_update
+        FROM(SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.id, public.safe_check.line_id, public.safe_check.is_safe,public.safe_check.time_update
+                FROM public.safe_check 
+                WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
+                AND public.safe_check.time_update >='$time_1'
+                AND public.safe_check.time_update <='$time_2'
+                ORDER BY public.safe_check.line_id, id desc) AS tav
+        WHERE tav.is_safe != 'Safe'
+        ");
 
         $safecheck3count = DB::select("SELECT COUNT (*)
         FROM (SELECT tav.line_id
