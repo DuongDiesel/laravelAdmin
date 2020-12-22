@@ -110,7 +110,7 @@ class Dashboardreport extends Controller
         ->dimensions(490,350)
         ->responsive(false);
 
-        return view('report.dashboard2report',compact('safecheck','safecheck2','safecheck3','pie_respond','pie_Safe'));
+        return view('report.dashboardreport',compact('safecheck','safecheck2','safecheck3','pie_respond','pie_Safe'));
 
     }
  

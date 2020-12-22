@@ -36,7 +36,6 @@
    </div>
    <!-- end panel -->
 
- 
   <!-- start table 1 row-->
   <div class="row">
     <div class="card">
@@ -79,6 +78,7 @@
     </div>
   </div>
   <!-- end table 1 row -->
+
   <!-- start table 2 row-->
   <div class="row">
     <div class="card">
@@ -152,6 +152,7 @@
 <!-- end container-->
 
   {!! Charts::scripts() !!}
+
   {!! $pie_respond->script() !!}
   {!! $pie_Safe->script() !!}
 

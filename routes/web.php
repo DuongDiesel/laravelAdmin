@@ -34,6 +34,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard1report/{time?}','Dashboard1report@test');
     Route::get('/dashboard2report/{time?}','Dashboard2report@test');
 
+   
+
 });
 
 
