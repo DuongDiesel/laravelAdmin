@@ -86,6 +86,75 @@
   </div>
   <!-- end table row 2 -->
 
+  <!-- start table 3 row-->
+<div class="row">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Time Submit</h4>
+      </div>
+      <div class="card-body">
+        @if($safecheck3 == null)
+          <h3>No Data Was Found </h3>
+              
+        @else  
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              
+              <th>Time</th>   
+            </thead>
+            <tbody>                
+              @foreach ($safecheck3 as $rowsafecheck3)
+                <tr>
+
+                <td>{{ $rowsafecheck3->time_update }}</td>
+                               
+                </tr>
+              @endforeach                   
+          @endif     
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end table row 4 -->
+
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Location</h4>
+      </div>
+      <div class="card-body">
+        @if($safecheck3 == null)
+          <h3>No Data Was Found </h3>
+              
+        @else  
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              
+              <th>Time</th>   
+            </thead>
+            <tbody>                
+              @foreach ($safecheck3 as $rowsafecheck3)
+                <tr>
+
+                <td>{{ $rowsafecheck3->location }}</td>
+                                               
+                </tr>
+              @endforeach                   
+          @endif     
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end table row 4 -->
+
  
 @endsection
 
