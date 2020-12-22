@@ -25,18 +25,17 @@
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
-              <th>id</th>
               <th>line_id</th>
               <th>is_safe</th>
-              <th>time_update</th>   
-              <th>choice</th>                  
+              <th>safe_mess</th>   
             </thead>
             <tbody>                
               @foreach ($safecheck3 as $rowsafecheck3)
                 <tr>
-                    
+
                 <td>{{ $rowsafecheck3->line_id }}</td>
                 <td>{{ $rowsafecheck3->is_safe }}</td>
+                <td>{{ $rowsafecheck3->safe_mess }}</td>
                                  
                 </tr>
               @endforeach                   
