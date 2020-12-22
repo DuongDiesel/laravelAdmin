@@ -18,7 +18,7 @@ class Seemore extends Controller
         WHERE public.safe_check.id = '$id_1'
         ");
 
-        dd($id);
+        dd($safecheck3);
 
         return view('report.dashboardreportseemore',compact('safecheck3'));
     }
