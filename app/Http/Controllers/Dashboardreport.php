@@ -12,25 +12,25 @@ class Dashboardreport extends Controller
 {
     
     public function test($time){
-
-        //print_r($time);
-        info($time);
+        //controller nay la cua safe_check board
+        
         $time_1=$time;
         $time_2=$time+86399998;
-        //print_r($time_1);
-        //print_r($time_2);
-
         
+        // //lated submit -ko dung cai nay
+        // $safecheck = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.safe_location, public.safe_check.safe_mess, public.safe_check.time_update 
+        // FROM public.safe_check,public.users_line 
+        // WHERE public.users_line.line_userid = public.safe_check.line_id 
+        // AND public.safe_check.time_update >='$time_1'
+        // AND public.safe_check.time_update <='$time_2'
+        // AND public.safe_check.is_safe != 'Safe'");
+        //----------------------------------------------------------------
+        // sum user_line
+        $safecheck1count = DB::select("SELECT COUNT (*)
+        FROM (SELECT public.users_line.line_userid FROM public.users_line) AS z");
+        $sum_user_line = $safecheck1count[0]->count;
 
-        //lated submit -ko dung cai nay
-        $safecheck = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.safe_location, public.safe_check.safe_mess, public.safe_check.time_update 
-        FROM public.safe_check,public.users_line 
-        WHERE public.users_line.line_userid = public.safe_check.line_id 
-        AND public.safe_check.time_update >='$time_1'
-        AND public.safe_check.time_update <='$time_2'
-        AND public.safe_check.is_safe != 'Safe'");
-
-        //dd($safecheck);
+        //----------------------------------------------------------------
         //lated submit per user-dung cai nay-day la nhung ng da su dung vao ngay hom day
         $safecheck2 = DB::select("SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.time_update
         FROM public.safe_check 
@@ -47,11 +47,11 @@ class Dashboardreport extends Controller
                 AND public.safe_check.time_update >='$time_1'
                 AND public.safe_check.time_update <='$time_2'
                 ORDER BY public.safe_check.line_id, id DESC) AS x
-            
         ");
+        $usedPerDay = $safecheck2count[0]->count;
+        $notUsedPerDay = $sum_user_line - $usedPerDay;
+        //----------------------------------------------------------------
 
-        $abc=$safecheck2count[0]->count;
-        dd($abc);
         // dung cai nay de hien ra nhung ng da nhap vao ngay hom day va not safe
         $safecheck3 = DB::select("SELECT tav.line_id, tav.is_safe, tav.time_update
         FROM(SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe,public.safe_check.time_update
@@ -62,44 +62,53 @@ class Dashboardreport extends Controller
             ORDER BY public.safe_check.line_id, id desc) AS tav
         WHERE tav.is_safe != 'Safe'");
 
-        //dd($safecheck3);
-
-        $safecheck4 = DB::select("SELECT DISTINCT public.safe_check.line_id 
-        FROM public.safe_check
-        WHERE public.safe_check.time_update >='$time_1'
-        AND public.safe_check.time_update <='$time_2'");
-
-        //dd($safecheck4);
-
-        $safecheck5 = DB::select("SELECT public.users_line.line_userid
-        FROM public.users_line 
-        WHERE public.users_line.line_userid NOT IN (SELECT DISTINCT public.safe_check.line_id 
-        FROM public.safe_check
-        WHERE public.safe_check.time_update >='$time_1'
-        AND public.safe_check.time_update <='$time_2')
+        $safecheck3count = DB::select("SELECT COUNT (*)
+        FROM (SELECT tav.line_id
+                FROM(SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe,public.safe_check.time_update
+                    FROM public.safe_check 
+                    WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
+                    AND public.safe_check.time_update >='$time_1'
+                    AND public.safe_check.time_update <='$time_2'
+                    ORDER BY public.safe_check.line_id, id desc) AS tav
+                WHERE tav.is_safe != 'Safe') AS y
         
         ");
+        $usedNotSafePerDay = $safecheck3count[0]->count;
+        $usedSafePerDay = $usedPerDay - $usedNotSafePerDay;
 
-        $b_respond=3;
-        $A_respond=3;
-        $A_Safe=3;
-        $B_Safe=3;
+        //----------------------------------------------------------------
+        //cai where in cua safecheck3
+        // $safecheck4 = DB::select("SELECT DISTINCT public.safe_check.line_id 
+        // FROM public.safe_check
+        // WHERE public.safe_check.time_update >='$time_1'
+        // AND public.safe_check.time_update <='$time_2'");
+
+        //----------------------------------------------------------------
+
+        // nhung nguoi ko su dung safecheck = notUsedPerDay
+        // $safecheck5 = DB::select("SELECT public.users_line.line_userid
+        // FROM public.users_line 
+        // WHERE public.users_line.line_userid NOT IN (SELECT DISTINCT public.safe_check.line_id 
+        // FROM public.safe_check
+        // WHERE public.safe_check.time_update >='$time_1'
+        // AND public.safe_check.time_update <='$time_2')
+        // ");
+
+        //----------------------------------------------------------------
 
         $pie_respond = Charts::create('pie', 'highcharts')
         ->title('Answer Status')
         ->labels(['Replied', "Didn't reply"])
-        ->values([$b_respond,$A_respond])
+        ->values([$usedPerDay,$notUsedPerDay])
         ->dimensions(530,350)
         ->responsive(false);
 
         $pie_Safe = Charts::create('pie', 'highcharts')
         ->title('Safety Status')
         ->labels(['Safe', 'Not Safe'])
-        ->values([$A_Safe,$B_Safe])
+        ->values([$usedSafePerDay,$usedNotSafePerDay])
         ->dimensions(490,350)
         ->responsive(false);
-
-        //dd($safecheck5);
 
         return view('report.dashboard2report',compact('safecheck','safecheck2','safecheck3'));
 

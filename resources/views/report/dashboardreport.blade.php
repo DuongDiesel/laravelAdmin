@@ -127,6 +127,9 @@
       </div>
     </div>
   </div>
+  {!! Charts::scripts() !!}
+  {!! $pie_respond->script() !!}
+  {!! $pie_Safe->script() !!}
 
     @endsection
 
