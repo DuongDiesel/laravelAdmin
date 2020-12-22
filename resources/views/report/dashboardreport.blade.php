@@ -65,7 +65,8 @@
                 <td>{{ $rowsafecheck3->is_safe }}</td>
                 <td>{{ $rowsafecheck3->time_update }}</td> 
                 <td>
-                  <a href="{{route('seemore.index',[$rowsafecheck3->id])}}">
+                  {{-- <a href="{{route('seemore.index',[$rowsafecheck3->id])}}"> --}}
+                  <a href='/dashboardreportseemore/'+ {{ $rowsafecheck3->id }} >
                     <button class="btn btn-primary">See More</button>
                   </a>
 
