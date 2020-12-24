@@ -136,7 +136,7 @@
           <table class="table">
             <thead class=" text-primary">
               
-              <th>Time</th>   
+              <th>Location</th>   
             </thead>
             <tbody>                
               @foreach ($safecheck3 as $rowsafecheck3)
