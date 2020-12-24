@@ -106,7 +106,7 @@
                 <td>{{ $rowsafecheck2->is_safe }}</td>
                 <td>{{ $rowsafecheck2->time_update }}</td>  
                 <td>
-                  <a href='/dashboardreportseemore/{{ $rowsafecheck3->id }}' >
+                  <a href='/dashboardreportseemore/{{ $rowsafecheck2>id }}' >
                     <button class="btn btn-primary">See More</button>
                   </a>
               </td>                        
