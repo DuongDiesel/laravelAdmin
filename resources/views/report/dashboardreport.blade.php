@@ -65,11 +65,9 @@
                 <td>{{ $rowsafecheck3->is_safe }}</td>
                 <td>{{ $rowsafecheck3->time_update }}</td> 
                 <td>
-                  {{-- <a href="{{route('seemore.index',[$rowsafecheck3->id])}}"> --}}
                   <a href='/dashboardreportseemore/{{ $rowsafecheck3->id }}' >
                     <button class="btn btn-primary">See More</button>
                   </a>
-
               </td>                   
                 </tr>
               @endforeach                   
@@ -98,14 +96,20 @@
             <thead class=" text-primary">
               <th>line_id</th>
               <th>is_safe</th>
-              <th>time_update</th>                    
+              <th>time_update</th>   
+              <th>choice</th>                      
             </thead>
             <tbody>                
               @foreach ($safecheck2 as $rowsafecheck2)
                 <tr>
                 <td>{{ $rowsafecheck2->line_id }}</td>
                 <td>{{ $rowsafecheck2->is_safe }}</td>
-                <td>{{ $rowsafecheck2->time_update }}</td>                    
+                <td>{{ $rowsafecheck2->time_update }}</td>  
+                <td>
+                  <a href='/dashboardreportseemore/{{ $rowsafecheck3->id }}' >
+                    <button class="btn btn-primary">See More</button>
+                  </a>
+              </td>                        
                 </tr>
               @endforeach                   
           @endif   
