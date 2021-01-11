@@ -98,15 +98,15 @@ class Dashboardreport extends Controller
         //----------------------------------------------------------------
 
         $pie_respond = Charts::create('pie', 'highcharts')
-        ->title('Answer Status')
-        ->labels(['Replied', "Didn't reply"])
+        ->title('返事状態')
+        ->labels(['返事した', "返事しなかった"])
         ->values([$usedPerDay,$notUsedPerDay])
         ->dimensions(530,350)
         ->responsive(false);
 
         $pie_Safe = Charts::create('pie', 'highcharts')
-        ->title('Safety Status')
-        ->labels(['Safe', 'Not Safe'])
+        ->title('返事状態')
+        ->labels(['安全', '危険'])
         ->values([$usedSafePerDay,$usedNotSafePerDay])
         ->dimensions(490,350)
         ->responsive(false);
