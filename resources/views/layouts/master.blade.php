@@ -60,14 +60,14 @@
           <li @yield('l1')>
             <a href="/dashboard">
               <i class="now-ui-icons design_app"></i>
-              <p>DashboardSafe</p>
+              <p>安否確認</p>
             </a>
           </li>
 
           <li @yield('l2')>
             <a href="/dashboard1">
               <i class="now-ui-icons education_atom"></i>
-              <p>DashboardTemp</p>
+              <p>体温確認</p>
             </a>
           </li>
 

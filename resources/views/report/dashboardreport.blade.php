@@ -15,7 +15,7 @@
   <!-- start panel-->
    <div class="panel panel-default">
      <div class="panel-heading">
-         <h3 style="text-align:center;" class="panel-title">Safety Check Results</h3>
+         <h3 style="text-align:center;" class="panel-title">安否確認の結果</h3>
      </div>
 
      <!-- start chart row-->
@@ -40,7 +40,7 @@
   <div class="row">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">safecheck3-lated submit per user and not safe</h4>
+        <h4 class="card-title">安全ではない学生 </h4>
       </div>
       <div class="card-body">
         @if($safecheck3 == null)
@@ -51,11 +51,11 @@
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
-              <th>id</th>
-              <th>line_id</th>
-              <th>is_safe</th>
-              <th>time_update</th>   
-              <th>choice</th>                  
+              <th>ID</th>
+              <th>LINE ID</th>
+              <th>安全状態</th>
+              <th>登録時間</th>   
+              <th>詳しく</th>                  
             </thead>
             <tbody>                
               @foreach ($safecheck3 as $rowsafecheck3)
@@ -66,7 +66,7 @@
                 <td>{{ $rowsafecheck3->time_update }}</td> 
                 <td>
                   <a href='/dashboardreportseemore/{{ $rowsafecheck3->id }}' >
-                    <button class="btn btn-primary">See More</button>
+                    <button class="btn btn-primary">詳しく見る</button>
                   </a>
               </td>                   
                 </tr>
@@ -84,7 +84,7 @@
   <div class="row">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">safecheck2-lated submit per user</h4>
+        <h4 class="card-title">登録した全員の学生</h4>
       </div>
       <div class="card-body">
         @if($safecheck2 == null)
@@ -94,10 +94,10 @@
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
-              <th>line_id</th>
-              <th>is_safe</th>
-              <th>time_update</th>   
-              <th>choice</th>                      
+              <th> LINE ID</th>
+              <th>安全状態</th>
+              <th>登録時間</th>   
+              <th>詳しく</th>                      
             </thead>
             <tbody>                
               @foreach ($safecheck2 as $rowsafecheck2)
@@ -107,7 +107,7 @@
                 <td>{{ $rowsafecheck2->time_update }}</td>  
                 <td>
                   <a href='/dashboardreportseemore/{{ $rowsafecheck2->id }}' >
-                    <button class="btn btn-primary">See More</button>
+                    <button class="btn btn-primary">詳しく見る </button>
                   </a>
               </td>                        
                 </tr>
