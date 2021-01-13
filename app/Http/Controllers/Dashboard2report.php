@@ -29,47 +29,8 @@ class Dashboard2report extends Controller
 
         //dd($safecheck);
 
-        $safecheck2 = DB::select("SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.time_update
-        FROM public.safe_check 
-        WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
-        AND public.safe_check.time_update >='$time_1'
-        AND public.safe_check.time_update <='$time_2'
-        ORDER BY public.safe_check.line_id, id desc;
-            
-        ");
-
-        //dd($safecheck2);
-
-        $safecheck3 = DB::select("SELECT tav.line_id, tav.is_safe, tav.time_update
-        FROM(SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id, public.safe_check.is_safe,public.safe_check.time_update
-            FROM public.safe_check 
-            WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
-            AND public.safe_check.time_update >='$time_1'
-            AND public.safe_check.time_update <='$time_2'
-            ORDER BY public.safe_check.line_id, id desc) AS tav
-        WHERE tav.is_safe != 'Safe'");
-
-        //dd($safecheck3);
-
-        $safecheck4 = DB::select("SELECT DISTINCT public.safe_check.line_id 
-        FROM public.safe_check
-        WHERE public.safe_check.time_update >='$time_1'
-        AND public.safe_check.time_update <='$time_2'");
-
-        //dd($safecheck4);
-
-        $safecheck5 = DB::select("SELECT public.users_line.line_userid
-        FROM public.users_line 
-        WHERE public.users_line.line_userid NOT IN (SELECT DISTINCT public.safe_check.line_id 
-        FROM public.safe_check
-        WHERE public.safe_check.time_update >='$time_1'
-        AND public.safe_check.time_update <='$time_2')
-        
-        ");
-
-        //dd($safecheck5);
-
-        return view('report.dashboard2report',compact('safecheck','safecheck2','safecheck3'));
+       
+        return view('report.dashboard2report',compact('safecheck'));
 
     }
  
