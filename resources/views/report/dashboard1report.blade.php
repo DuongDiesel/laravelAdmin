@@ -28,7 +28,7 @@
               <th>time_update</th>                    
             </thead>
             <tbody>                
-              @foreach ($stempcheck as $rowtempcheck)
+              @foreach ($tempcheck as $rowtempcheck)
                 <tr>
                 <td>{{ $rowtempcheck->user_id }}</td>
                 <td>{{ $rowtempcheck->user_name }}</td>
