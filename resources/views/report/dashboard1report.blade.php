@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Dashboard1-Safety check
+    Dashboard1-Temp check
 @endsection
 
 @section('l2')
@@ -10,22 +10,19 @@
 
 @section('content')
 
-
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">safecheck</h4>
+        <h4 class="card-title">登録している学生</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
-              <th>user_id</th>
-              <th>user_name</th>
-              <th>line_id</th>
-              <th>is_safe</th>
-              <th>safe_location</th> 
-              <th>safe_mess</th> 
-              <th>time_update</th>                    
+              <th>学生番号</th>
+              <th>名前</th>
+              <th>Line Id</th>
+              <th>体温</th>
+              <th>登録時間</th>                    
             </thead>
             <tbody>                
               @foreach ($tempcheck as $rowtempcheck)
