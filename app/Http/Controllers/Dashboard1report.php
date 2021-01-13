@@ -23,8 +23,8 @@ class Dashboard1report extends Controller
         $tempcheck = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, public.temp_check.line_id, public.temp_check.temp, public.temp_check.temp_time 
         FROM public.temp_check,public.users_line 
         WHERE public.users_line.line_userid = public.temp_check.line_id 
-        AND public.safe_check.time_update >='$time_1'
-        AND public.safe_check.time_update <='$time_2'");
+        AND public.temp_check.time_update >='$time_1'
+        AND public.temp_check.time_update <='$time_2'");
 
         return view('report.dashboard1report',compact('tempcheck'));
 
