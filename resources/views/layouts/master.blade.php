@@ -74,7 +74,7 @@
           <li @yield('l3')>
             <a href="/dashboard2">
               <i class="now-ui-icons location_map-big"></i>
-              <p>TKB</p>
+              <p>ユーザ情報</p>
             </a>
           </li>
           
