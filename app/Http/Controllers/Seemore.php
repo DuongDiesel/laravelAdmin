@@ -29,7 +29,7 @@ class Seemore extends Controller
         WHERE public.safe_check.id = '$id_1'
         ");
         $safecheck3Timeupdate = $safecheck3Timeupdate[0]->time_update;
-        $todate= date("'m/d/Y H:i:s'",$safecheck3Timeupdate/ 1000);
+        $todate= date("'m/d/Y H:i:s'",$safecheck3Timeupdate/ 1000+32400);
 
 
 
