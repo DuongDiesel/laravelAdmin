@@ -105,13 +105,13 @@
               <th>Time</th>   
             </thead>
             <tbody>                
-              @foreach ($safecheck3 as $rowsafecheck3)
+              
                 <tr>
 
-                <td>{{ $rowsafecheck3->time_update }}</td>
+                <td>{{ $todate }}</td>
                                
                 </tr>
-              @endforeach                   
+                           
           @endif     
             </tbody>
           </table>

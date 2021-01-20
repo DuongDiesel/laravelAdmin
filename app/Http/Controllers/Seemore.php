@@ -24,6 +24,14 @@ class Seemore extends Controller
         AND public.safe_check.line_id = public.users_line.line_userid
         ");
 
+        $safecheck3Timeupdate = DB::select("SELECT  public.safe_check.time_update
+        FROM public.safe_check
+        WHERE public.safe_check.id = '$id_1'
+        ");
+        $safecheck3Timeupdate = $safecheck3Timeupdate[0]->time_update;
+        $todate= date("'m/d/Y H:i:s'",$safecheck3Timeupdate/ 1000);
+
+
 
 
         //dd($safecheck4);
