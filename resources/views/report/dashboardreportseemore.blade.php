@@ -139,13 +139,13 @@
               <th>Location</th>   
             </thead>
             <tbody>                
-              @foreach ($safecheck3 as $rowsafecheck3)
+              
                 <tr>
 
-                <td>{{ $rowsafecheck3->location }}</td>
+                  <td>{!! $map['html'] !!}</td>
                                                
                 </tr>
-              @endforeach                   
+                            
           @endif     
             </tbody>
           </table>
@@ -160,7 +160,7 @@
 
 @section('scripts')
 <script type="text/javascript" src="js/app.js"></script>
-    
+{!! $map['js'] !!}
 @endsection
 
 

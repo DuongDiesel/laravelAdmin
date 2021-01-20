@@ -31,11 +31,18 @@ class Seemore extends Controller
         $safecheck3Timeupdate = $safecheck3Timeupdate[0]->time_update;
         $todate= date("'m/d/Y H:i:s'",$safecheck3Timeupdate/ 1000+32400);
 
-
-
+        //map
+        $config['center']='Tokyo Tower ,Tokyo';
+        $config['zoom']='14';
+        $config['map_height']='300px';
+        //   $config['map_width']='300px';
+        $config['scrollwheel']=false;
+        GMaps::initialize($config);
+    
+        $map =GMaps::create_map();
 
         //dd($safecheck4);
 
-        return view('report.dashboardreportseemore',compact('safecheck3','safecheck4','todate'));
+        return view('report.dashboardreportseemore',compact('safecheck3','safecheck4','todate','map'));
     }
 }
