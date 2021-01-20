@@ -36,6 +36,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
     Route::get('/dashboardreportseemore/{id?}','Seemore@index');
 
+    //map
+    Route::get('/map', 'Gmap@index');
+
 
     
    
