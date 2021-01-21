@@ -9,7 +9,8 @@
 @endsection
 
 @section('head')
-{!! $map['js'] !!}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKnLShvSaO30x2wxVJh7zocMd0VGt-e4w&callback=initMap"
+    async defer></script>
 @endsection
 
 @section('content')
