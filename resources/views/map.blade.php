@@ -7,11 +7,11 @@
     </head>
 <body>
     <div class="content">
-        <h2>ban do</h2>
-        <div class="map" id="app">
-            <gmap-map :center="{lat:10,;ng:10}" :zoom="7"></gmap-map>
-
+        <div id="map" style="height:500px">
         </div>
+        <script src="{{ asset('/js/result.js') }}"></script> //追加
+        <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBKnLShvSaO30x2wxVJh7zocMd0VGt-e4w&callback=initMap" async defer>
+        </script>
     </div>
     <script src="{{mix('js/app.js')}}"
 </body>
