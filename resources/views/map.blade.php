@@ -1,8 +1,6 @@
 <html>
-    <head>
-        <script type='text/javascript'>
-            var centreGot = false;
-        </script>
+    <head lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
+        中略
         
     </head>
 <body>
@@ -13,6 +11,6 @@
         <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBKnLShvSaO30x2wxVJh7zocMd0VGt-e4w&callback=initMap" async defer>
         </script>
     </div>
-    <script src="{{mix('js/app.js')}}"
+    
 </body>
 </html>
