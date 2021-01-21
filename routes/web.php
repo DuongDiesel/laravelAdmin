@@ -38,15 +38,16 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
     //map
     Route::get('/map', function(){
-        $config = array();
-        $config['center'] = 'Defence Garden, Karachi';
-        $config['zoom'] = '14';
-        $config['map_height'] = '500px';
-        $config['scrollwheel'] = false;
-        GMaps::initialize($config);
-        $map = GMaps::create_map();
+        // $config = array();
+        // $config['center'] = 'Defence Garden, Karachi';
+        // $config['zoom'] = '14';
+        // $config['map_height'] = '500px';
+        // $config['scrollwheel'] = false;
+        // GMaps::initialize($config);
+        // $map = GMaps::create_map();
     
-        return view('map')->with('map', $map);
+        // return view('map')->with('map', $map);
+        return view('map');
     });
 
 
