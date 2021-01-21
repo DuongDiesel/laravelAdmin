@@ -9,8 +9,7 @@
 @endsection
 
 @section('head')
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKnLShvSaO30x2wxVJh7zocMd0VGt-e4w&callback=initMap"
-    async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKnLShvSaO30x2wxVJh7zocMd0VGt-e4w&callback=initMap"async defer></script>
 @endsection
 
 @section('content')
