@@ -3,7 +3,7 @@
         <script type='text/javascript'>
             var centreGot = false;
         </script>
-        {!! $map['js'] !!}
+        
     </head>
 <body>
     <div class="content">
