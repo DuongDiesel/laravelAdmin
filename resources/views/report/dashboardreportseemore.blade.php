@@ -8,6 +8,10 @@
     class="active "
 @endsection
 
+@section('head')
+{!! $map['js'] !!}
+@endsection
+
 @section('content')
 
 <!-- start table 1 row-->
@@ -140,11 +144,7 @@
             </thead>
             <tbody>                
               
-                <tr>
-
-                  <td>{!! $map['html'] !!}</td>
-                                               
-                </tr>
+              {!! $map['html'] !!}
                             
           @endif     
             </tbody>
