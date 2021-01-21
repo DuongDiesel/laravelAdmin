@@ -160,6 +160,7 @@
 
 @section('scripts')
 <script type="text/javascript" src="js/app.js"></script>
+{!! $map['html'] !!}
 @endsection
 
 
