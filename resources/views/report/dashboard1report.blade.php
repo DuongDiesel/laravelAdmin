@@ -15,12 +15,15 @@
         <h4 class="card-title">登録している学生</h4>
       </div>
       <div class="card-body">
+        @if($tempcheck == null)
+          <h3>データが見つかりませんでした </h3>
+              
+        @else  
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
               <th>学生番号</th>
               <th>名前</th>
-              <th>Line Id</th>
               <th>体温</th>
               <th>登録時間</th>                    
             </thead>
@@ -29,12 +32,11 @@
                 <tr>
                 <td>{{ $rowtempcheck->user_id }}</td>
                 <td>{{ $rowtempcheck->user_name }}</td>
-                <td>{{ $rowtempcheck->line_id }}</td>
                 <td>{{ $rowtempcheck->temp }}</td>
                 <td>{{ $rowtempcheck->temp_time }}</td>
                 </tr>
               @endforeach                   
-              
+            @endif  
             </tbody>
           </table>
         </div>
