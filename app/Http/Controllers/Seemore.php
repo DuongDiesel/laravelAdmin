@@ -33,7 +33,7 @@ class Seemore extends Controller
 
         //map
         $location1 = $safecheck3[0]->location;
-        $config['center']=$safecheck3;
+        $config['center']=$location1;
         $config['zoom']='14';
         $config['map_height']='300px';
         //   $config['map_width']='300px';
