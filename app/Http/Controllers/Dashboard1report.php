@@ -28,7 +28,7 @@ class Dashboard1report extends Controller
 
         $tempchecklast = $tempcheck;
 
-        foreach ($tempcheck as $tempchecktemp) {
+        foreach ($tempcheck as &$tempchecktemp) {
             $tempchecktemp->time_update = date("'m/d/Y H:i:s'",$tempchecktemp->time_update/ 1000+32400);
         }
         dd($tempcheck);
