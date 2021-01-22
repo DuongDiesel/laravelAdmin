@@ -40,6 +40,10 @@ class Dashboardreport extends Controller
         ORDER BY public.safe_check.line_id, id desc;
         ");
 
+        foreach ($safecheck2 as &$safecheck2tempdate) {
+            $safecheck2tempdate->time_update = date("'m/d/Y H:i:s'",$safecheck2tempdate->time_update/ 1000+32400);
+        }
+
         $safecheck2count = DB::select("SELECT COUNT(*) 
         FROM (SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.line_id
                 FROM public.safe_check 
@@ -62,6 +66,8 @@ class Dashboardreport extends Controller
                 ORDER BY public.safe_check.line_id, id desc) AS tav
         WHERE tav.is_safe != 'Safe'
         ");
+
+        
 
         $safecheck3count = DB::select("SELECT COUNT (*)
         FROM (SELECT tav.line_id

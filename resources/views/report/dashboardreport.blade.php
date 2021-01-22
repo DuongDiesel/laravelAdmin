@@ -94,6 +94,7 @@
             <thead class=" text-primary">
               <th> LINE ID</th>
               <th>安全状態</th>
+              <th>登録時間</th>
               <th>詳しく</th>                      
             </thead>
             <tbody>                
@@ -101,6 +102,7 @@
                 <tr>
                 <td>{{ $rowsafecheck2->line_id }}</td>
                 <td>{{ $rowsafecheck2->is_safe }}</td>
+                <td>{{ $rowsafecheck2->time_update }}</td>
                 <td>
                   <a href='/dashboardreportseemore/{{ $rowsafecheck2->id }}' >
                     <button class="btn btn-primary">詳しく見る </button>
