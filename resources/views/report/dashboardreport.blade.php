@@ -44,7 +44,7 @@
       </div>
       <div class="card-body">
         @if($safecheck3 == null)
-          <h3>No Data Was Found </h3>
+          <h3>データが見つかりませんでした</h3>
               
         @else  
 
@@ -88,7 +88,7 @@
       </div>
       <div class="card-body">
         @if($safecheck2 == null)
-          <h3> No Data Was Found </h3>
+          <h3> データが見つかりませんでした</h3>
               
         @else     
         <div class="table-responsive">
@@ -96,7 +96,6 @@
             <thead class=" text-primary">
               <th> LINE ID</th>
               <th>安全状態</th>
-              <th>登録時間</th>   
               <th>詳しく</th>                      
             </thead>
             <tbody>                
@@ -104,7 +103,6 @@
                 <tr>
                 <td>{{ $rowsafecheck2->line_id }}</td>
                 <td>{{ $rowsafecheck2->is_safe }}</td>
-                <td>{{ $rowsafecheck2->time_update }}</td>  
                 <td>
                   <a href='/dashboardreportseemore/{{ $rowsafecheck2->id }}' >
                     <button class="btn btn-primary">詳しく見る </button>

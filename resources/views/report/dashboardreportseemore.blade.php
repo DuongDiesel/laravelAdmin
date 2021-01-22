@@ -18,20 +18,20 @@
 <div class="row">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Submit Info</h4>
+        <h4 class="card-title">登録情報</h4>
       </div>
       <div class="card-body">
         @if($safecheck3 == null)
-          <h3>No Data Was Found </h3>
+          <h3>データが見つかりませんでした</h3>
               
         @else  
 
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
-              <th>line_id</th>
-              <th>is_safe</th>
-              <th>safe_mess</th>   
+              <th>LINE ID</th>
+              <th>安全状態</th>
+              <th>メッセージ</th>   
             </thead>
             <tbody>                
               @foreach ($safecheck3 as $rowsafecheck3)
@@ -56,20 +56,20 @@
 <div class="row">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Student Info</h4>
+        <h4 class="card-title">学生の情報</h4>
       </div>
       <div class="card-body">
         @if($safecheck4 == null)
-          <h3>No Data Was Found </h3>
+          <h3>データが見つかりませんでした</h3>
               
         @else  
 
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
-              <th>Student ID</th>
-              <th>State</th>
-              <th>Message</th>   
+              <th>学生番号</th>
+              <th>名前</th>
+              <th>住所</th>   
             </thead>
             <tbody>                
               @foreach ($safecheck4 as $rowsafecheck4)
@@ -94,11 +94,11 @@
 <div class="row">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Time Submit</h4>
+        <h4 class="card-title">登録時間</h4>
       </div>
       <div class="card-body">
         @if($safecheck3 == null)
-          <h3>No Data Was Found </h3>
+          <h3>データが見つかりませんでした </h3>
               
         @else  
 
@@ -106,7 +106,7 @@
           <table class="table">
             <thead class=" text-primary">
               
-              <th>Time</th>   
+              <th>時間</th>   
             </thead>
             <tbody>                
               
@@ -125,14 +125,15 @@
   </div>
   <!-- end table row 4 -->
 
+  <!-- start table 3 row-->
   <div class="row">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Location</h4>
+        <h4 class="card-title">緯度経度</h4>
       </div>
       <div class="card-body">
         @if($safecheck3 == null)
-          <h3>No Data Was Found </h3>
+          <h3>データが見つかりませんでした </h3>
               
         @else  
 
@@ -140,11 +141,46 @@
           <table class="table">
             <thead class=" text-primary">
               
-              <th>Location</th>   
+              <th>緯度経度</th>   
             </thead>
             <tbody>                
+              @foreach ($safecheck3 as $rowsafecheck3)
+                <tr>
+
+                <td>{{ $rowsafecheck3->location}}</td>
+                              
+                </tr>
+              @endforeach            
+          @endif     
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end table row 4 -->
+
+  <!-- start table 3 row-->
+  <div class="row">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">居場所</h4>
+      </div>
+      <div class="card-body">
+        @if($safecheck3 == null)
+          <h3>データが見つかりませんでした</h3>
               
+        @else  
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              
+              <th>居場所</th>   
+            </thead>
+            <tbody>                
               {!! $map['html'] !!}
+              
                             
           @endif     
             </tbody>
