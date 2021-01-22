@@ -13,12 +13,12 @@ class Dashboard1report extends Controller
     
 
     public function test($time){
-        print_r($time);
-        info($time);
+        //print_r($time);
+        //info($time);
         $time_1=$time;
         $time_2=$time+86399998;
         //print_r($time_1);
-        print_r($time_2);
+        //print_r($time_2);
 
         $tempcheck = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, public.temp_check.line_id, public.temp_check.temp, public.temp_check.temp_time 
         FROM public.temp_check,public.users_line 
@@ -28,10 +28,10 @@ class Dashboard1report extends Controller
 
         $tempchecklast = $tempcheck;
 
-        foreach ($tempcheck as &$tempchecktemp) {
+        foreach ($tempchecklast as &$tempchecktemp) {
             $tempchecktemp->time_update = date("'m/d/Y H:i:s'",$tempchecktemp->time_update/ 1000+32400);
         }
-        dd($tempcheck);
+        dd($tempchecklast);
 
         return view('report.dashboard1report',compact('tempcheck'));
 
