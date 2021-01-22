@@ -26,12 +26,11 @@ class Dashboard1report extends Controller
         AND public.temp_check.temp_time >='$time_1'
         AND public.temp_check.temp_time <='$time_2'");
 
-        $tempchecklast = $tempcheck;
 
-        foreach ($tempchecklast as &$tempchecktemp) {
+        foreach ($tempcheck as &$tempchecktemp) {
             $tempchecktemp->temp_time = date("'m/d/Y H:i:s'",$tempchecktemp->temp_time/ 1000+32400);
         }
-        dd($tempchecklast);
+        //dd($tempchecklast);
 
         return view('report.dashboard1report',compact('tempcheck'));
 
