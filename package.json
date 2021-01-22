@@ -29,6 +29,7 @@
         "@fullcalendar/daygrid": "^5.4.0",
         "@fullcalendar/interaction": "^5.4.0",
         "@fullcalendar/vue": "^5.4.0",
+        "mapbox-gl": "^2.0.1",
         "vue2-google-maps": "^0.10.7"
     }
 }

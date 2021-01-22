@@ -32,7 +32,8 @@ class Seemore extends Controller
         $todate= date("'m/d/Y H:i:s'",$safecheck3Timeupdate/ 1000+32400);
 
         //map
-        $config['center']='Tokyo Tower ,Tokyo';
+        $location1 = $safecheck3[0]->location;
+        $config['center']=$safecheck3;
         $config['zoom']='14';
         $config['map_height']='300px';
         //   $config['map_width']='300px';
