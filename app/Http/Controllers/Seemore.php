@@ -18,6 +18,10 @@ class Seemore extends Controller
         WHERE public.safe_check.id = '$id_1'
         ");
 
+        foreach ($safecheck3 as &$safecheck3tempdate) {
+            $safecheck3tempdate->time_update = date("'m/d/Y H:i:s'",$safecheck3tempdate->time_update/ 1000+32400);
+        }
+
         $safecheck4 = DB::select("SELECT public.users_line.user_id, public.users_line.user_name, public.users_line.user_address
         FROM public.safe_check, public.users_line
         WHERE public.safe_check.id = '$id_1'

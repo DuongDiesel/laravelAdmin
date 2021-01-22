@@ -30,6 +30,7 @@
           <table class="table">
             <thead class=" text-primary">
               <th>LINE ID</th>
+              <th>登録時間</th>
               <th>安全状態</th>
               <th>メッセージ</th>   
             </thead>
@@ -38,6 +39,7 @@
                 <tr>
 
                 <td>{{ $rowsafecheck3->line_id }}</td>
+                <td>{{ $rowsafecheck3->time_update }}</td>
                 <td>{{ $rowsafecheck3->is_safe }}</td>
                 <td>{{ $rowsafecheck3->safe_mess }}</td>
                                  
