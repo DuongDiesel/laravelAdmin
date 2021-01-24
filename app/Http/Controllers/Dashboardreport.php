@@ -32,7 +32,7 @@ class Dashboardreport extends Controller
 
         //----------------------------------------------------------------
         //lated submit per user-dung cai nay-day la nhung ng da su dung vao ngay hom day
-        $safecheck2 = DB::select("SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.id, public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.time_update, public.users_line.user_name
+        $safecheck2 = DB::select("SELECT DISTINCT ON (public.safe_check.line_id) public.safe_check.id, public.safe_check.line_id, public.safe_check.is_safe, public.safe_check.time_update, public.users_line.user_id
         FROM public.safe_check, public.users_line
         WHERE line_id IN (SELECT DISTINCT public.safe_check.line_id FROM public.safe_check)
         AND public.safe_check.time_update >='$time_1'
