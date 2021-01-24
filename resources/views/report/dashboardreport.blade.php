@@ -51,7 +51,7 @@
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
-              <th>ID</th>
+              <th>学生番号</th>
               <th>安全状態</th>
               <th>登録時間</th>   
               <th>詳しく</th>                  
@@ -59,7 +59,7 @@
             <tbody>                
               @foreach ($safecheck3 as $rowsafecheck3)
                 <tr>
-                <td>{{ $rowsafecheck3->id }}</td>
+                <td>{{ $rowsafecheck3->user_id }}</td>
                 <td>{{ $rowsafecheck3->is_safe }}</td>
                 <td>{{ $rowsafecheck3->time_update }}</td> 
                 <td>
@@ -92,7 +92,7 @@
         <div class="table-responsive">
           <table class="table">
             <thead class=" text-primary">
-              <th> LINE ID</th>
+              <th> 学生番号</th>
               <th>安全状態</th>
               <th>登録時間</th>
               <th>詳しく</th>                      
