@@ -100,7 +100,7 @@
             <tbody>                
               @foreach ($safecheck2 as $rowsafecheck2)
                 <tr>
-                <td>{{ $rowsafecheck2->line_id }}</td>
+                <td>{{ $rowsafecheck2->user_name }}</td>
                 <td>{{ $rowsafecheck2->is_safe }}</td>
                 <td>{{ $rowsafecheck2->time_update }}</td>
                 <td>
